@@ -29,6 +29,7 @@ rocket_rect = rocket_rect.move((width/2)-rocket.get_width()/2,0)
 
 v_rocket = 0
 v_exhaust = -10e-3
+thrust = 200 * 10e-3
 gravity = 9.81*10e-3
 
 run = True
@@ -84,6 +85,14 @@ while run == True:
     x = rocket_rect.x
     y = rocket_rect.y
     
+    h = height - mbottom - y - rlength
+
+    deltaBoost2 = v_rocket**2 - 4 * h * ((thrust - gravity) / 2)
+    print(deltaBoost2)
+
+    if deltaBoost2 >= -25:
+        v_rocket -= thrust
+
     screen.fill(black)
 
     display_label(v_rocket,x,y)
