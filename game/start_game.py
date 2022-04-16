@@ -19,7 +19,9 @@ mtop = 50 # marge du haut
 
 rlength = 30
 rwidth = 10
-vmax = 0.1
+vmax = 1
+
+SCALE_T = 10**(-3)
 
 screen = pygame.display.set_mode(size)
 
@@ -27,10 +29,13 @@ rocket = pygame.transform.scale(pygame.image.load("rocket.png"), [rwidth, rlengt
 rocket_rect = rocket.get_rect()
 rocket_rect = rocket_rect.move((width/2)-rocket.get_width()/2,0)
 
-v_rocket = 0
-v_exhaust = -10e-3
-thrust = 200 * 10e-3
-gravity = 9.81*10e-3
+h0 = (height - mbottom) / SCALE_T
+h = h0
+
+v_rocket = 0.0
+v_exhaust = -10e-4
+gravity = 9.81 * SCALE_T
+thrust = 20.0 * SCALE_T
 
 run = True
 
@@ -44,11 +49,15 @@ successRect = death.get_rect()
 successRect.x = width / 2
 successRect.y = height / 2
 
+deltaBoost2 = 0
+deltaBoost2_mem = 0
+landing = False
+
 def display_label(v_rocket,x,y):
     
-    v_RocketText = font.render("Vitesse fusée : " + str(v_rocket), False, white)
+    v_RocketText = font.render("Vitesse fusée : " + str(round(v_rocket, 2)) + "m/s", False, white)
     posX = font.render("X : " + str(x), False, white)
-    posY = font.render("Y : " + str(y), False, white)
+    posY = font.render("h : " + str(round(h / 100, 2)) + "m", False, white)
     vRect = v_RocketText.get_rect()
     posXRect = posX.get_rect()
     posYRect = posY.get_rect()
@@ -75,42 +84,37 @@ while run == True:
   
     v_rocket += gravity 
 
-
     if(rocket_rect.y < height):
-        rocket_rect = rocket_rect.move(0,v_rocket)
-    
-    display_label(v_rocket,rocket_rect.x,rocket_rect.y)
-
+        rocket_rect = rocket_rect.move(0, v_rocket / 10)
 
     x = rocket_rect.x
-    y = rocket_rect.y
     
-    h = height - mbottom - y - rlength
+    h = h - v_rocket
 
     deltaBoost2 = v_rocket**2 - 4 * h * ((thrust - gravity) / 2)
-    print(deltaBoost2)
 
-    if deltaBoost2 >= -25:
+    if not landing and deltaBoost2 >= 0:
+        landing = True
+
+    if landing:
+        print("Landing")
         v_rocket -= thrust
 
     screen.fill(black)
-
-    display_label(v_rocket,x,y)
+    display_label(v_rocket,rocket_rect.x,h)
     
-    if y >= height - mbottom - rlength:
+    if h <= 0:
         if v_rocket >= vmax:
             screen.blit(death, deathRect)
         elif v_rocket < vmax:
             screen.blit(success, successRect)
-        
         run = False
-            
-    
-    pygame.time.wait(10)
+
+    pygame.time.wait(1)
     pygame.display.flip()
     
-    if run == False:
-        pygame.time.wait(1000)
+    if run == False and h <= 0:
+        pygame.time.wait(2000)
 
 pygame.quit()
 sys.exit()
