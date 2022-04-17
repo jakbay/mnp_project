@@ -19,23 +19,24 @@ mtop = 50 # marge du haut
 
 rlength = 30
 rwidth = 10
-vmax = 1
+vmax = 0.1
 
 SCALE_T = 10**(-3)
+
+h0 = (height - mbottom) / SCALE_T
+h = h0
+
+SCALE_pix = (height - mbottom) / h0
+
+v_rocket = 0.0
+gravity = 9.81 * SCALE_T
+thrust = 20.0 * SCALE_T
 
 screen = pygame.display.set_mode(size)
 
 rocket = pygame.transform.scale(pygame.image.load("rocket.png"), [rwidth, rlength])
 rocket_rect = rocket.get_rect()
 rocket_rect = rocket_rect.move((width/2)-rocket.get_width()/2,0)
-
-h0 = (height - mbottom) / SCALE_T
-h = h0
-
-v_rocket = 0.0
-v_exhaust = -10e-4
-gravity = 9.81 * SCALE_T
-thrust = 20.0 * SCALE_T
 
 run = True
 
@@ -77,6 +78,9 @@ def display_label(v_rocket,x,y):
     screen.blit(v_RocketText,vRect)
     screen.blit(rocket, rocket_rect)
 
+def delta_boost(h, v, g, t):
+    return v**2 - 4 * h * ((t- g) / 2)
+
 while run == True:
     for event in pygame.event.get():
         if event.type == pygame.QUIT: 
@@ -85,20 +89,30 @@ while run == True:
     v_rocket += gravity 
 
     if(rocket_rect.y < height):
-        rocket_rect = rocket_rect.move(0, v_rocket / 10)
+        nbpix = height - mbottom - rlength - h * SCALE_pix - float(rocket_rect.y)
+        rocket_rect = rocket_rect.move(0, nbpix)
 
     x = rocket_rect.x
-    
     h = h - v_rocket
 
-    deltaBoost2 = v_rocket**2 - 4 * h * ((thrust - gravity) / 2)
-
+    # On calcule le delta du futur et s'il change de signe, on cherche plus précisément
+    # le moment où allumer les boosters.
+    deltaBoost2 = delta_boost(h - v_rocket - gravity, v_rocket + gravity, gravity, thrust)
     if not landing and deltaBoost2 >= 0:
         landing = True
+        while delta_boost(h, v_rocket, gravity, thrust) < 0:
+            v_rocket += gravity * 0.1
+            h -= v_rocket * 0.1
 
+    # On fait du PWM jusqu'à atteindre la vitesse maximale
+    # d'atterrissage. Cela implique un tâtonnement sur le dernier mètre
+    # de la descente.
     if landing:
-        print("Landing")
-        v_rocket -= thrust
+        if v_rocket > vmax:
+            v_rocket -= thrust
+        else:
+            v_rocket -= gravity
+            pygame.time.wait(10)
 
     screen.fill(black)
     display_label(v_rocket,rocket_rect.x,h)
@@ -110,11 +124,9 @@ while run == True:
             screen.blit(success, successRect)
         run = False
 
-    pygame.time.wait(1)
     pygame.display.flip()
-    
     if run == False and h <= 0:
-        pygame.time.wait(2000)
+        pygame.time.wait(5000)
 
 pygame.quit()
 sys.exit()
