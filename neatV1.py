@@ -6,7 +6,7 @@ class Genome:
         self.newGeneration = []
         self.selection(agents,fitnessArr)
         self.crossover(agents)
-        #self.mutate() 
+        #self.mutate()
 
     def selection(self,agents,fitnessArr):
         for i in range(len(fitnessArr)):
@@ -49,6 +49,7 @@ class Genome:
 class AI:
     def __init__(self,weights = False):
         self.output = False
+        self.x = 0
         self.y = 0
         self.v_final = 0
         self.rocket_mass = 0
@@ -92,7 +93,7 @@ class AI:
             return 1/(1 + math.exp(-input))
 
     def fitnessCalc(self):
-        return (1/(self.v_final + self.y) + self.fuel_left*1e-6)
+        return (1/(self.v_final + self.distance) + self.fuel_left*1e-6)
 
 class Neat:
     def __init__(self,POPULATION_SIZE,GENERATION_COUNT):
@@ -115,7 +116,7 @@ class Neat:
 
         genome = Genome(self.agents,self.fitnessArr[-20:])
 
-        #print("Five best score : ", self.fitnessArr[-3:])
+        print("Five best score : ", self.fitnessArr[-3:])
 
         self.agents = genome.newGeneration
 
@@ -125,6 +126,6 @@ class Neat:
             for i in range(100):
                 self.agents.append(best)
             print(best.v_final*36,"km/h vitesse final")
-            print(best.y,"m altitude finale")
+            print(best.distance,"m altitude finale")
 
         self.fitnessArr = []
