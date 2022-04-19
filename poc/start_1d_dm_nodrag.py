@@ -38,7 +38,7 @@ t = 0
 
 screen = pygame.display.set_mode(size)
 
-rocket = pygame.transform.scale(pygame.image.load("rocket.png"), [rwidth, rlength])
+rocket = pygame.transform.scale(pygame.image.load("../resource/rocket.png"), [rwidth, rlength])
 rocket_rect = rocket.get_rect()
 rocket_rect = rocket_rect.move((width/2)-rocket.get_width()/2,0)
 
