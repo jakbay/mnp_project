@@ -24,21 +24,18 @@ def genWeights():
 class Genome:
     def __init__(self,agents,fitnessArr,POPULATION_SIZE):
         self.newGeneration = []
-        self.defects = []
         self.POPULATION_SIZE = POPULATION_SIZE
         self.selection(agents,fitnessArr)
         self.crossover(agents)
-        self.mutate(False)
+        self.mutate()
 
     def selection(self,agents,fitnessArr):
         for i in range(len(fitnessArr)):
-            self.defects.append(fitnessArr[i][1] == 0)
             self.newGeneration.append(agents[fitnessArr[i][0]])
 
     def reproduce(self, z):
         parent1 = self.newGeneration[z]
         parent2 = self.newGeneration[z+1]
-        defect = self.defects[z] or self.defects[z + 1]
         newAI = AI()
         for i in range(CHROMOSOMES_LAYER_NB):
             for j in range(CHROMOSOMES_LAYER_WIDTH):
@@ -47,7 +44,6 @@ class Genome:
                 else:
                     newAI.weights[i][j] = parent2.weights[i][j]
         self.newGeneration.append(newAI)
-        self.mutate(defect)
 
     def crossover(self,agents):
         cut = random.randint(0,SELECTION_SIZE - 1)
@@ -66,19 +62,15 @@ class Genome:
         ran = random.choices(agents, k=(self.POPULATION_SIZE - len(self.newGeneration)))
         self.newGeneration.extend(ran)
 
-    def mutate(self, is_defect):
-        if is_defect:
-            print("mutate: we have a defect")
-            self.newGeneration[-1].weights = genWeights()
-        else:
-            if random.uniform(0,1) <= MUTATION_RATE:
-                nb = random.randint(1,MAX_MUTATIONS)
-                for i in range(nb):
-                    layer = random.randint(0,CHROMOSOMES_LAYER_NB - 1)
-                    if layer == 0 :
-                        self.newGeneration[-1].weights[0][random.randint(0,1)] = [random.uniform(-1,1),random.uniform(-1,1)]
-                    else:
-                        self.newGeneration[-1].weights[layer][random.randint(0,1)] = random.uniform(-1,1)
+    def mutate(self):
+        if random.uniform(0,1) <= MUTATION_RATE:
+            nb = random.randint(1,MAX_MUTATIONS)
+            for i in range(nb):
+                layer = random.randint(0,CHROMOSOMES_LAYER_NB - 1)
+                if layer == 0 :
+                    self.newGeneration[-1].weights[0][random.randint(0,1)] = [random.uniform(-1,1),random.uniform(-1,1)]
+                else:
+                    self.newGeneration[-1].weights[layer][random.randint(0,1)] = random.uniform(-1,1)
 class AI:
     def __init__(self,weights = False):
         self.output = False
