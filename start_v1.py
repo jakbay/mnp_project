@@ -23,8 +23,9 @@ gravity = 9.81e-2 #(m/s^2)
 engineON = False
 
 DEAD_ROCKET = []
-GENERATION_COUNT = 10
-POPULATION_SIZE = 100
+GENERATION_COUNT = 25
+generations_left = GENERATION_COUNT
+POPULATION_SIZE = 500
 ROCKET_AGENTS = []
 TIME_ELAPSED = 0
 
@@ -50,7 +51,7 @@ for i in range(POPULATION_SIZE):
     ROCKET_AGENTS.append(Rocket())
 
 
-while run and GENERATION_COUNT:
+while run and generations_left:
   
     for event in pygame.event.get():
         if event.type == pygame.QUIT: 
@@ -63,7 +64,7 @@ while run and GENERATION_COUNT:
         if i not in DEAD_ROCKET:
             engineON = Algo.agents[i].getOutput(ROCKET_AGENTS[i].vy_rocket,ROCKET_AGENTS[i].rect.y)
             
-            if engineON:
+            if engineON and ROCKET_AGENTS[i].fuel_left > abs(delta_mass):
                 ROCKET_AGENTS[i].vy_rocket = ROCKET_AGENTS[i].vy_rocket -(v_exhaust * delta_mass)/ROCKET_AGENTS[i].fuel_left + gravity
                 ROCKET_AGENTS[i].fuel_left += delta_mass 
             else: 
@@ -82,10 +83,10 @@ while run and GENERATION_COUNT:
                 Algo.agents[i].fuel_left = ROCKET_AGENTS[i].fuel_left
                 Algo.agents[i].distance = height - 30 - ROCKET_AGENTS[i].rect.y
 
-    if len(DEAD_ROCKET) == 100:
-        print("GENERATION : ", (11 - GENERATION_COUNT))
-        GENERATION_COUNT -= 1
-        if GENERATION_COUNT == 1:
+    if len(DEAD_ROCKET) == POPULATION_SIZE:
+        print("GENERATION : ", (GENERATION_COUNT - generations_left + 1))
+        generations_left -= 1
+        if generations_left == 1:
             Algo.stop_generation(True)
         else:
             Algo.stop_generation()
@@ -95,7 +96,6 @@ while run and GENERATION_COUNT:
         for i in range(POPULATION_SIZE):
             ROCKET_AGENTS.append(Rocket())
 
-    pygame.time.wait(1)
     pygame.display.flip()
     
 pygame.quit()
