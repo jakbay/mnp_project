@@ -4,6 +4,7 @@ import neatV1
 pygame.init()
 
 size = width, height = 1400, 800 #previously width was 800
+neatV1.HEIGHT = height
 speed = [2, 2]
 
 rlength = 30
@@ -66,7 +67,7 @@ while run and generations_left:
             
             if engineON and ROCKET_AGENTS[i].fuel_left > abs(delta_mass):
                 ROCKET_AGENTS[i].vy_rocket = ROCKET_AGENTS[i].vy_rocket -(v_exhaust * delta_mass)/ROCKET_AGENTS[i].fuel_left + gravity
-                ROCKET_AGENTS[i].fuel_left += delta_mass 
+                ROCKET_AGENTS[i].fuel_left += delta_mass
             else: 
                 ROCKET_AGENTS[i].vy_rocket += gravity
 
@@ -75,6 +76,8 @@ while run and generations_left:
             if ROCKET_AGENTS[i].rect.y < height - 30 and ROCKET_AGENTS[i].rect.y > -100 and ROCKET_AGENTS[i].fuel_left > 0:
                 ROCKET_AGENTS[i].rect = ROCKET_AGENTS[i].rect.move(ROCKET_AGENTS[i].vx_rocket,ROCKET_AGENTS[i].vy_rocket)
                 Algo.agents[i].y = height - 30 - ROCKET_AGENTS[i].rect.y
+                if Algo.agents[i].y < Algo.agents[i].y_min:
+                    Algo.agents[i].y_min = Algo.agents[i].y
             
             else:
                 DEAD_ROCKET.append(i)
