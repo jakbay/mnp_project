@@ -3,7 +3,8 @@ import math
 from itertools import combinations
 
 SELECTION_SIZE = 50
-PRESERVE_FROM_MUTATIONS = 5
+STAGNATION = 3
+PRESERVE_NB = 5
 NEWBLOOD_SIZE = 10
 DISPLAY_SCORES = 15
 # CH nb must be par
@@ -16,6 +17,9 @@ HEIGHT = 0
 t = 0
 current_id = 0
 GENERATION_COUNT = 0
+best_score = 0
+last_best_score = 0
+best_score_count = 0
 
 def genWeights():
     arr = []
@@ -41,12 +45,22 @@ class Genome:
         self.mutate()
 
     def selection(self,agents,fitnessArr):
-        print("Selecting the", SELECTION_SIZE, "best rockets for breeding")
-        for i in range(len(fitnessArr)):
-            self.newGeneration.append(agents[fitnessArr[i][0]])
-        print("Adding", NEWBLOOD_SIZE, "brand new rockets to the breeding pool")
-        for i in range(NEWBLOOD_SIZE):
-            self.newGeneration.append(AI())
+        global best_score_count
+        global STAGNATION
+        if best_score_count < STAGNATION:
+            print("Selecting the", SELECTION_SIZE, "best rockets for breeding")
+            for i in range(len(fitnessArr)):
+                self.newGeneration.append(agents[fitnessArr[i][0]])
+            print("Adding", NEWBLOOD_SIZE, "brand new rockets to the breeding pool")
+            for i in range(NEWBLOOD_SIZE):
+                self.newGeneration.append(AI())
+        else:
+            print("Stagnation: kill all but the very best and bring in fresh blood")
+            for i in range(PRESERVE_NB):
+                self.newGeneration.append(agents[fitnessArr[i][0]])
+            print("Adding", self.POPULATION_SIZE - PRESERVE_NB, "brand new rockets to the breeding pool")
+            for i in range(self.POPULATION_SIZE - PRESERVE_NB):
+                self.newGeneration.append(AI())
 
     def reproduce(self, parent1, parent2):
         newAI = AI()
@@ -59,17 +73,22 @@ class Genome:
         self.newGeneration.append(newAI)
 
     def crossover(self,agents):
-        cut = len(self.newGeneration)
-        pairs = list(combinations(self.newGeneration, 2))
-        for z in range(round(len(pairs) / 2)):
-            self.reproduce(pairs[z][0],pairs[z][1])
-        print("Adding", self.POPULATION_SIZE - len(self.newGeneration), "brand new rockets to total population")
-        for i in range(self.POPULATION_SIZE - len(self.newGeneration)):
-            self.newGeneration.append(AI())
+        global best_score_count
+        global STAGNATION
+        if best_score_count < STAGNATION:
+            pairs = list(combinations(self.newGeneration, 2))
+            for z in range(round(len(pairs) / 2)):
+                self.reproduce(pairs[z][0],pairs[z][1])
+            print("Adding", self.POPULATION_SIZE - len(self.newGeneration), "brand new rockets to total population")
+            for i in range(self.POPULATION_SIZE - len(self.newGeneration)):
+                self.newGeneration.append(AI())
+        else:
+            STAGNATION += 1
+            best_score_count = 0
 
     def mutate(self):
         newgen_mutations = 0
-        for i in range(PRESERVE_FROM_MUTATIONS, len(self.newGeneration)):
+        for i in range(PRESERVE_NB, len(self.newGeneration)):
             if random.uniform(0,1) <= self.mutation_rate:
                 newgen_mutations += 1
                 nb = random.randint(1,MAX_MUTATIONS)
@@ -148,6 +167,10 @@ class Neat:
         
 
     def stop_generation(self,signal = False):
+        global best_score
+        global last_best_score
+        global best_score_count
+
         for i in range(len(self.agents)):
             self.fitnessArr.append((i,
                                     self.agents[i].fitnessCalc(),
@@ -160,9 +183,18 @@ class Neat:
 
         genome = Genome(self.agents,self.fitnessArr[:SELECTION_SIZE], self.POPULATION_SIZE)
 
+        if self.fitnessArr[0][1] == best_score and self.fitnessArr[PRESERVE_NB - 1][1] == last_best_score:
+            best_score_count += 1
+            print("best scores", best_score, "and", last_best_score, "occured", best_score_count, "times")
+        else:
+            best_score = self.fitnessArr[0][1]
+            last_best_score = self.fitnessArr[PRESERVE_NB - 1][1]
+            best_score_count = 0
+            print("resetting best score", best_score)
+
         print(DISPLAY_SCORES, "best scores:")
         for i in range(DISPLAY_SCORES):
-            print(self.fitnessArr[DISPLAY_SCORES+1-i])
+            print(self.fitnessArr[i])
 
         if not signal:
             self.agents = genome.newGeneration
