@@ -24,9 +24,10 @@ gravity = 9.81e-2 #(m/s^2)
 engineON = False
 
 DEAD_ROCKET = []
-GENERATION_COUNT = 25
+GENERATION_COUNT = 50
+neatV1.GENERATION_COUNT = GENERATION_COUNT
 generations_left = GENERATION_COUNT
-POPULATION_SIZE = 500
+POPULATION_SIZE = 1000
 ROCKET_AGENTS = []
 TIME_ELAPSED = 0
 
@@ -55,7 +56,7 @@ for i in range(POPULATION_SIZE):
 while run and generations_left:
   
     for event in pygame.event.get():
-        if event.type == pygame.QUIT: 
+        if event.type == pygame.QUIT:
             run = False
 
     screen.fill("black")
@@ -73,7 +74,7 @@ while run and generations_left:
 
             screen.blit(ROCKET_AGENTS[i].rocket, ROCKET_AGENTS[i].rect)
             
-            if ROCKET_AGENTS[i].rect.y < height - 30 and ROCKET_AGENTS[i].rect.y > -100 and ROCKET_AGENTS[i].fuel_left > 0:
+            if ROCKET_AGENTS[i].rect.y <= height - 30 and ROCKET_AGENTS[i].rect.y >= -100 and ROCKET_AGENTS[i].fuel_left > 0:
                 ROCKET_AGENTS[i].rect = ROCKET_AGENTS[i].rect.move(ROCKET_AGENTS[i].vx_rocket,ROCKET_AGENTS[i].vy_rocket)
                 Algo.agents[i].y = height - 30 - ROCKET_AGENTS[i].rect.y
                 if Algo.agents[i].y < Algo.agents[i].y_min:
@@ -82,13 +83,19 @@ while run and generations_left:
             else:
                 DEAD_ROCKET.append(i)
                 Algo.agents[i].v_final = math.sqrt((ROCKET_AGENTS[i].vx_rocket)**2 + (ROCKET_AGENTS[i].vy_rocket)**2)
-                Algo.agents[i].y = height - 30 - ROCKET_AGENTS[i].rect.y
+                if (height - 30 - ROCKET_AGENTS[i].rect.y < 0):
+                    Algo.agents[i].y = 0
+                    Algo.agents[i].distance = 0
+                else:
+                    Algo.agents[i].y = height - 30 - ROCKET_AGENTS[i].rect.y
+                    Algo.agents[i].distance = height - 30 - ROCKET_AGENTS[i].rect.y
                 Algo.agents[i].fuel_left = ROCKET_AGENTS[i].fuel_left
-                Algo.agents[i].distance = height - 30 - ROCKET_AGENTS[i].rect.y
+
 
     if len(DEAD_ROCKET) == POPULATION_SIZE:
         print("GENERATION : ", (GENERATION_COUNT - generations_left + 1))
         generations_left -= 1
+        neatV1.t += 1
         if generations_left == 1:
             Algo.stop_generation(True)
         else:
