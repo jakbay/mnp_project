@@ -2,11 +2,11 @@ import random
 import math
 from itertools import combinations
 
-SELECTION_SIZE = 50
-STAGNATION = 3
+SELECTION_SIZE = 20
+STAGNATION = 5
 PRESERVE_NB = 5
-NEWBLOOD_SIZE = 10
-DISPLAY_SCORES = 15
+NEWBLOOD_SIZE = 5
+DISPLAY_SCORES = 10
 # CH nb must be par
 CHROMOSOMES_LAYER_WIDTH = 6
 CHROMOSOMES_LAYER_NB = 6
@@ -83,7 +83,6 @@ class Genome:
             for i in range(self.POPULATION_SIZE - len(self.newGeneration)):
                 self.newGeneration.append(AI())
         else:
-            STAGNATION += 1
             best_score_count = 0
 
     def mutate(self):
@@ -116,21 +115,21 @@ class AI:
         global current_id
         self.id = current_id
         current_id += 1
+        self.transit_neurone_value = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
         if weights :
             self.weights = weights
         else:
             self.weights = genWeights()
 
     def getOutput(self,input1,input2):
-        transit_neurone_value = []
         output = 0
         for i in range(CHROMOSOMES_LAYER_WIDTH):
-            transit_neurone_value.append(self.sigmoid(self.weights[0][i][0]*float(input1) +self.weights[0][i][1])*float(input2))
+            self.transit_neurone_value[i] = self.sigmoid(self.weights[0][i][0]*float(input1) +self.weights[0][i][1])*float(input2)
         for i in range(1, CHROMOSOMES_LAYER_NB - 1):
             for j in range(CHROMOSOMES_LAYER_WIDTH):
-                transit_neurone_value[j] = float(self.weights[i][j]) * float(transit_neurone_value[j])
+                self.transit_neurone_value[j] *= float(self.weights[i][j])
         for i in range(CHROMOSOMES_LAYER_WIDTH):
-            output += (float(self.weights[-1][i]) * float(transit_neurone_value[i]))
+            output += (float(self.weights[-1][i]) * float(self.transit_neurone_value[i]))
 
         self.output = self.sigmoid(output) > 0.5
         return self.output
@@ -143,7 +142,7 @@ class AI:
 
     def fitnessCalc(self):
         if self.y <= 0:
-            if self.v_final > V_MAX_TOUCHDOWN:
+            if self.v_final >= V_MAX_TOUCHDOWN:
                 return 1/self.v_final
             else:
                 return self.fuel_left*1e-4
@@ -183,7 +182,7 @@ class Neat:
 
         genome = Genome(self.agents,self.fitnessArr[:SELECTION_SIZE], self.POPULATION_SIZE)
 
-        if self.fitnessArr[0][1] == best_score and self.fitnessArr[PRESERVE_NB - 1][1] == last_best_score:
+        if self.fitnessArr[0][1] == best_score and self.fitnessArr[PRESERVE_NB][1] == last_best_score:
             best_score_count += 1
             print("best scores", best_score, "and", last_best_score, "occured", best_score_count, "times")
         else:

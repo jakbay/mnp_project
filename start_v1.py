@@ -15,7 +15,7 @@ vmax = 0.1
 screen = pygame.display.set_mode(size)
 
 delta_mass = -(30e2) #kg/s
-fuel_mass = 1e6 
+fuel_mass = 1e6
 dry_mass = 120000 #kg
 rocket_mass = dry_mass + fuel_mass
 v_exhaust = -3*3280e-2 #(m/s)
@@ -24,18 +24,20 @@ gravity = 9.81e-2 #(m/s^2)
 engineON = False
 
 DEAD_ROCKET = []
-GENERATION_COUNT = 50
+GENERATION_COUNT = 100
 neatV1.GENERATION_COUNT = GENERATION_COUNT
 generations_left = GENERATION_COUNT
-POPULATION_SIZE = 1000
+POPULATION_SIZE = 200
 ROCKET_AGENTS = []
 TIME_ELAPSED = 0
+
+T = v_exhaust * delta_mass
 
 run = True
 
 class Rocket:
     def __init__(self):
-        self.rocket = pygame.transform.scale(pygame.image.load("resource/rocket.png"), [rwidth, rlength])
+        self.rocket = pygame.transform.scale(pygame.image.load("resource/rocket.png").convert_alpha(), [rwidth, rlength])
         self.x = (width/2)-self.rocket.get_width()/2
         self.y = 0
         self.rect = self.rocket.get_rect()
@@ -49,8 +51,9 @@ Algo = neatV1.Neat(POPULATION_SIZE,GENERATION_COUNT)
 
 Algo.init_first_generation()
 
+ROCKET_AGENTS = [None] * POPULATION_SIZE
 for i in range(POPULATION_SIZE):
-    ROCKET_AGENTS.append(Rocket())
+    ROCKET_AGENTS[i] = Rocket()
 
 
 while run and generations_left:
@@ -67,7 +70,7 @@ while run and generations_left:
             engineON = Algo.agents[i].getOutput(ROCKET_AGENTS[i].vy_rocket,ROCKET_AGENTS[i].rect.y)
             
             if engineON and ROCKET_AGENTS[i].fuel_left > abs(delta_mass):
-                ROCKET_AGENTS[i].vy_rocket = ROCKET_AGENTS[i].vy_rocket -(v_exhaust * delta_mass)/ROCKET_AGENTS[i].fuel_left + gravity
+                ROCKET_AGENTS[i].vy_rocket = ROCKET_AGENTS[i].vy_rocket -T/ROCKET_AGENTS[i].fuel_left + gravity
                 ROCKET_AGENTS[i].fuel_left += delta_mass
             else: 
                 ROCKET_AGENTS[i].vy_rocket += gravity
@@ -102,10 +105,9 @@ while run and generations_left:
             Algo.stop_generation()
         DEAD_ROCKET = []
         TIME_ELAPSED = 0
-        ROCKET_AGENTS = []
+        ROCKET_AGENTS = [None] * POPULATION_SIZE
         for i in range(POPULATION_SIZE):
-            ROCKET_AGENTS.append(Rocket())
-
+            ROCKET_AGENTS[i] = Rocket()
     pygame.display.flip()
     
 pygame.quit()
