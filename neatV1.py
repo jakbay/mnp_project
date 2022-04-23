@@ -115,7 +115,7 @@ class AI:
         global current_id
         self.id = current_id
         current_id += 1
-        self.transit_neurone_value = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+        self.transit_neurone_value = [None] * CHROMOSOMES_LAYER_WIDTH
         if weights :
             self.weights = weights
         else:
