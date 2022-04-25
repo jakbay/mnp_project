@@ -1,16 +1,17 @@
 import random 
 import math
 from itertools import combinations
+import numpy as np
 
-SELECTION_SIZE = 20
+SELECTION_SIZE = 17
 STAGNATION = 5
 PRESERVE_NB = 5
-NEWBLOOD_SIZE = 5
-DISPLAY_SCORES = 10
-# CH nb must be par
-CHROMOSOMES_LAYER_WIDTH = 6
-CHROMOSOMES_LAYER_NB = 6
-MAX_MUTATION_RATE = 0.75 # ratio
+NEWBLOOD_SIZE = 1
+DISPLAY_SCORES = 25
+# CH nb must be par # 10/4 fonctionne assez bien, se stabilise autour de 0.05
+CHROMOSOMES_LAYER_WIDTH = 12
+CHROMOSOMES_LAYER_NB = 4
+MAX_MUTATION_RATE = 0.99 # ratio
 MAX_MUTATIONS = 10 # ratio
 V_MAX_TOUCHDOWN = 0.1 # m/s
 HEIGHT = 0
@@ -125,11 +126,12 @@ class AI:
         output = 0
         for i in range(CHROMOSOMES_LAYER_WIDTH):
             self.transit_neurone_value[i] = self.sigmoid(self.weights[0][i][0]*float(input1) +self.weights[0][i][1])*float(input2)
-        for i in range(1, CHROMOSOMES_LAYER_NB - 1):
+        for i in range(1, CHROMOSOMES_LAYER_NB-1):
+            interm = np.sum(self.transit_neurone_value[i-1])
             for j in range(CHROMOSOMES_LAYER_WIDTH):
-                self.transit_neurone_value[j] *= float(self.weights[i][j])
+                self.transit_neurone_value[j] = self.sigmoid(interm * float(self.weights[i][j]))
         for i in range(CHROMOSOMES_LAYER_WIDTH):
-            output += (float(self.weights[-1][i]) * float(self.transit_neurone_value[i]))
+            output += self.weights[-1][i] * self.transit_neurone_value[i]
 
         self.output = self.sigmoid(output) > 0.5
         return self.output
@@ -148,7 +150,7 @@ class AI:
                 return self.fuel_left*1e-4
         else:
             if self.y_min == 0:
-                return self.fuel_left*1e-5
+                return self.fuel_left*1e-7
             else:
                 return 1 / self.y_min
 
