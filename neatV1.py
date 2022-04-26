@@ -8,9 +8,9 @@ STAGNATION = 5
 PRESERVE_NB = 5
 NEWBLOOD_SIZE = 1
 DISPLAY_SCORES = 25
-# CH nb must be par # 10/4 fonctionne assez bien, se stabilise autour de 0.05
-CHROMOSOMES_LAYER_WIDTH = 12
-CHROMOSOMES_LAYER_NB = 4
+# CH nb must be par
+CHROMOSOMES_LAYER_WIDTH = 10
+CHROMOSOMES_LAYER_NB = 3
 MAX_MUTATION_RATE = 0.99 # ratio
 MAX_MUTATIONS = 10 # ratio
 V_MAX_TOUCHDOWN = 0.1 # m/s

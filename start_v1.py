@@ -42,7 +42,7 @@ gravity = 9.8 * SCALE_T #(m/s^2)
 engineON = False
 
 DEAD_ROCKET = []
-GENERATION_COUNT = 200
+GENERATION_COUNT = 100
 neatV1.GENERATION_COUNT = GENERATION_COUNT
 generations_left = GENERATION_COUNT
 POPULATION_SIZE = 100
@@ -50,6 +50,7 @@ ROCKET_AGENTS = []
 TIME_ELAPSED = 0
 
 T = (v_exhaust * delta_mass)
+fourchette_min = 0
 
 run = True
 
@@ -57,7 +58,9 @@ class Rocket:
     def __init__(self):
         self.rocket = pygame.transform.scale(pygame.image.load("resource/rocket.png").convert_alpha(), [rwidth, rlength])
         self.x = (width/2)-self.rocket.get_width()/2
-        self.y = h0 - random.randint(0, round(h0 / (10 + generations_left)))
+        global fourchette_min
+        fourchette_min = round((h0/((0.5 * GENERATION_COUNT)))*(1/(2-(GENERATION_COUNT-generations_left)/GENERATION_COUNT)))
+        self.y = h0 - random.randint(0, fourchette_min)
         self.rect = self.rocket.get_rect()
         self.rect.x = self.x
         self.rect.y = height - self.y * SCALE_pix
@@ -128,6 +131,7 @@ while run and generations_left:
         ROCKET_AGENTS = [None] * POPULATION_SIZE
         for i in range(POPULATION_SIZE):
             ROCKET_AGENTS[i] = Rocket()
+        print("Conditions initiales : hmax =", h0, "hmin =", h0 - fourchette_min)
     pygame.display.flip()
     
 pygame.quit()
