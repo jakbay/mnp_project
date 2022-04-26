@@ -22,19 +22,6 @@ best_score = 0
 last_best_score = 0
 best_score_count = 0
 
-def genWeights():
-    arr = []
-    tmp_arr = []
-    for j in range(CHROMOSOMES_LAYER_WIDTH):
-        tmp_arr.append([random.uniform(-1,1),random.uniform(-1,1)])
-    arr.append(tmp_arr)
-    for i in range(1, CHROMOSOMES_LAYER_NB):
-        tmp_arr2 = []
-        for j in range(CHROMOSOMES_LAYER_WIDTH):
-            tmp_arr2.append(random.uniform(-1,1),)
-        arr.append(tmp_arr2)
-    return arr
-
 class Genome:
     def __init__(self,agents,fitnessArr,POPULATION_SIZE):
         self.newGeneration = []
@@ -120,7 +107,20 @@ class AI:
         if weights :
             self.weights = weights
         else:
-            self.weights = genWeights()
+            self.weights = self.genWeights()
+
+    def genWeights(self):
+        arr = []
+        tmp_arr = []
+        for j in range(CHROMOSOMES_LAYER_WIDTH):
+            tmp_arr.append([random.uniform(-1,1),random.uniform(-1,1)])
+        arr.append(tmp_arr)
+        for i in range(1, CHROMOSOMES_LAYER_NB):
+            tmp_arr2 = []
+            for j in range(CHROMOSOMES_LAYER_WIDTH):
+                tmp_arr2.append(random.uniform(-1,1),)
+            arr.append(tmp_arr2)
+        return arr
 
     def getOutput(self,input1,input2):
         output = 0
