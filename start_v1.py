@@ -1,5 +1,6 @@
 import sys, pygame, math
 import random
+import gc
 import neatV1 
 
 pygame.init()
@@ -32,8 +33,8 @@ SCALE_T = 10**(-2)
 h0 = 2.5 * (height + mtop - mbottom)
 SCALE_pix = (height - mbottom) / h0
 
-delta_mass = -(30 / SCALE_T) #kg/s
-fuel_mass = 1e4 / SCALE_T
+delta_mass = -(3000) #kg/s
+fuel_mass = 1e5
 dry_mass = 120000 #kg
 rocket_mass = dry_mass + fuel_mass
 v_exhaust = -3*3280 * SCALE_T #(m/s)
@@ -92,7 +93,7 @@ while run and generations_left:
             
             if engineON and ROCKET_AGENTS[i].fuel_left > abs(delta_mass):
                 ROCKET_AGENTS[i].vy_rocket = ROCKET_AGENTS[i].vy_rocket -T/ROCKET_AGENTS[i].fuel_left + gravity
-                ROCKET_AGENTS[i].fuel_left += delta_mass
+                ROCKET_AGENTS[i].fuel_left += delta_mass * SCALE_T
             else: 
                 ROCKET_AGENTS[i].vy_rocket += gravity
 
@@ -135,5 +136,6 @@ while run and generations_left:
     pygame.display.flip()
     
 pygame.quit()
-sys.exit()
+gc.collect()
+globals().clear()
 

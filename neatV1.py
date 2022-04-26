@@ -147,10 +147,10 @@ class AI:
             if self.v_final >= V_MAX_TOUCHDOWN:
                 return 1/self.v_final
             else:
-                return self.fuel_left*1e-4
+                return self.fuel_left*1e-3
         else:
             if self.y_min == 0:
-                return self.fuel_left*1e-7
+                return self.fuel_left*1e-5
             else:
                 return 1 / self.y_min
 
