@@ -125,9 +125,9 @@ class AI:
     def getOutput(self,input1,input2):
         output = 0
         for i in range(CHROMOSOMES_LAYER_WIDTH):
-            self.transit_neurone_value[i] = self.sigmoid(self.weights[0][i][0]*float(input1) +self.weights[0][i][1])*float(input2)
+            self.transit_neurone_value[i] = self.sigmoid(self.weights[0][i][0]*float(input1)) + self.sigmoid(self.weights[0][i][1]*float(input2))
         for i in range(1, CHROMOSOMES_LAYER_NB-1):
-            interm = np.sum(self.transit_neurone_value[i-1])
+            interm = np.sum(self.transit_neurone_value)
             for j in range(CHROMOSOMES_LAYER_WIDTH):
                 self.transit_neurone_value[j] = self.sigmoid(interm * float(self.weights[i][j]))
         for i in range(CHROMOSOMES_LAYER_WIDTH):

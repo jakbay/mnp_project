@@ -43,12 +43,13 @@ gravity = 9.8 * SCALE_T #(m/s^2)
 engineON = False
 
 DEAD_ROCKET = []
-GENERATION_COUNT = 100
+GENERATION_COUNT = 50
 neatV1.GENERATION_COUNT = GENERATION_COUNT
 generations_left = GENERATION_COUNT
 POPULATION_SIZE = 100
 ROCKET_AGENTS = []
 TIME_ELAPSED = 0
+CAMPER_REMOVAL = 40 / SCALE_T
 
 T = (v_exhaust * delta_mass)
 fourchette_min = 0
@@ -62,12 +63,15 @@ class Rocket:
         global fourchette_min
         fourchette_min = round((h0/((0.5 * GENERATION_COUNT)))*(1/(2-(GENERATION_COUNT-generations_left)/GENERATION_COUNT)))
         self.y = h0 - random.randint(0, fourchette_min)
+        self.y_last = self.y
         self.rect = self.rocket.get_rect()
         self.rect.x = self.x
         self.rect.y = height - self.y * SCALE_pix
         self.vx_rocket = 0
         self.vy_rocket = 0
         self.fuel_left = fuel_mass
+        self.camper = 0
+        self.remove = False
 
 Algo = neatV1.Neat(POPULATION_SIZE,GENERATION_COUNT)
 
@@ -90,8 +94,15 @@ while run and generations_left:
     for i in range(POPULATION_SIZE):
         if i not in DEAD_ROCKET:
             engineON = Algo.agents[i].getOutput(ROCKET_AGENTS[i].vy_rocket,ROCKET_AGENTS[i].y)
-            
-            if engineON and ROCKET_AGENTS[i].fuel_left > abs(delta_mass):
+
+            if ROCKET_AGENTS[i].y == ROCKET_AGENTS[i].y_last:
+                ROCKET_AGENTS[i].camper += 1
+            else:
+                ROCKET_AGENTS[i].y_last = ROCKET_AGENTS[i].y
+                ROCKET_AGENTS[i].camper = 0
+            if ROCKET_AGENTS[i].camper >= CAMPER_REMOVAL:
+                ROCKET_AGENTS[i].remove = True
+            if (engineON and ROCKET_AGENTS[i].fuel_left > abs(delta_mass)) or ROCKET_AGENTS[i].remove:
                 ROCKET_AGENTS[i].vy_rocket = ROCKET_AGENTS[i].vy_rocket -T/ROCKET_AGENTS[i].fuel_left + gravity
                 ROCKET_AGENTS[i].fuel_left += delta_mass * SCALE_T
             else: 
@@ -104,6 +115,7 @@ while run and generations_left:
             if ROCKET_AGENTS[i].rect.y <= YBOTTOM and ROCKET_AGENTS[i].rect.y >= 0 and ROCKET_AGENTS[i].fuel_left > 0:
                 ROCKET_AGENTS[i].rect = ROCKET_AGENTS[i].rect.move(ROCKET_AGENTS[i].vx_rocket,ROCKET_AGENTS[i].vy_rocket * SCALE_pix)
                 Algo.agents[i].y =(YBOTTOM - ROCKET_AGENTS[i].rect.y + rlength) / SCALE_pix
+                ROCKET_AGENTS[i].y = Algo.agents[i].y
                 if Algo.agents[i].y < Algo.agents[i].y_min:
                     Algo.agents[i].y_min = Algo.agents[i].y
             
