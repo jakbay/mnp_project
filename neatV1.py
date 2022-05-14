@@ -1,12 +1,12 @@
-import random 
+import random
 import math
 from itertools import combinations
 import numpy as np
 
-SELECTION_SIZE = 17
+SELECTION_SIZE = 23
 STAGNATION = 5
 PRESERVE_NB = 5
-NEWBLOOD_SIZE = 1
+NEWBLOOD_SIZE = 3
 DISPLAY_SCORES = 25
 # CH nb must be par
 CHROMOSOMES_LAYER_WIDTH = 10
@@ -160,12 +160,14 @@ class Neat:
         self.POPULATION_SIZE = POPULATION_SIZE
         self.agents = []
         self.fitnessArr = []
-        self.BestAgent = AI() 
-    
+        self.BestAgent = AI()
+
     def init_first_generation(self):
         for i in range(self.POPULATION_SIZE):
             self.agents.append(AI())
-        
+
+    def clear_fitness_arr(self):
+        self.fitnessArr = []
 
     def stop_generation(self,signal = False):
         global best_score
@@ -175,7 +177,7 @@ class Neat:
         for i in range(len(self.agents)):
             self.fitnessArr.append((i,
                                     self.agents[i].fitnessCalc(),
-                                    "id: " + str(self.agents[i].id),
+                                    self.agents[i].id,
                                     "vfinal: " + str(round(self.agents[i].v_final, 2)),
                                     "hfinal: " + str(round(self.agents[i].distance, 2)),
                                     "fleft: " + str(round(self.agents[i].fuel_left))))
@@ -206,5 +208,4 @@ class Neat:
                 self.agents.append(best)
             print(best.v_final,"m/s vitesse finale")
             print(best.distance,"m altitude finale")
-
-        self.fitnessArr = []
+        return self.fitnessArr[0][2]
