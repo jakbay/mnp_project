@@ -103,12 +103,6 @@ def main_loop(dh0=False):
         TIME_ELAPSED += 1
         for i in range(POPULATION_SIZE):
             if i not in DEAD_ROCKET:
-                if TIME_ELAPSED % DT_DATA_RECORDING == 0:
-                    idx = int(TIME_ELAPSED/DT_DATA_RECORDING) - 1
-                    current_data[i][0][idx] = Algo.agents[i].id
-                    current_data[i][1][idx] = ROCKET_AGENTS[i].y
-                    current_data[i][2][idx] = ROCKET_AGENTS[i].vy_rocket
-                    current_data[i][3][idx] = ROCKET_AGENTS[i].fuel_left
                 engineON = Algo.agents[i].getOutput(ROCKET_AGENTS[i].vy_rocket,ROCKET_AGENTS[i].y)
 
                 if ROCKET_AGENTS[i].y == ROCKET_AGENTS[i].y_last:
@@ -125,6 +119,13 @@ def main_loop(dh0=False):
                     ROCKET_AGENTS[i].fuel_left += delta_mass * SCALE_T
                 else:
                     ROCKET_AGENTS[i].vy_rocket += gravity
+
+                if TIME_ELAPSED % DT_DATA_RECORDING == 0:
+                    idx = int(TIME_ELAPSED/DT_DATA_RECORDING) - 1
+                    current_data[i][0][idx] = Algo.agents[i].id
+                    current_data[i][1][idx] = ROCKET_AGENTS[i].y
+                    current_data[i][2][idx] = ROCKET_AGENTS[i].vy_rocket
+                    current_data[i][3][idx] = ROCKET_AGENTS[i].fuel_left
 
                 screen.blit(ROCKET_AGENTS[i].rocket, ROCKET_AGENTS[i].rect)
                 pygame.draw.line(screen, white, (mleft, mtop), (mleft, height - mbottom))
@@ -155,9 +156,7 @@ def main_loop(dh0=False):
             bestID = Algo.stop_generation(generations_left == 1)
             for i in range(POPULATION_SIZE):
                 if current_data[i][0][0] == bestID:
-                    for j in range(MAX_MEM_SIZE):
-                        if current_data[i][0][j] == None:
-                            break
+                    for j in range(TIME_ELAPSED):
                         recorded_data[GENERATION_COUNT - generations_left - 1][0][j] = current_data[i][0][j]
                         recorded_data[GENERATION_COUNT - generations_left - 1][1][j] = current_data[i][1][j]
                         recorded_data[GENERATION_COUNT - generations_left - 1][2][j] = current_data[i][2][j]
