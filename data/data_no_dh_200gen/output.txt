@@ -1,0 +1,465 @@
+Terminating current generation.
+Terminating current generation.
+Terminating current generation.
+Terminating current generation.
+Terminating current generation.
+Terminating current generation.
+Terminating current generation.
+Terminating current generation.
+Terminating current generation.
+Terminating current generation.
+Terminating current generation.
+Terminating current generation.
+Terminating current generation.
+Terminating current generation.
+Terminating current generation.
+Terminating current generation.
+Terminating current generation.
+Terminating current generation.
+Terminating current generation.
+Terminating current generation.
+Terminating current generation.
+Terminating current generation.
+Terminating current generation.
+Terminating current generation.
+Terminating current generation.
+Terminating current generation.
+Terminating current generation.
+Terminating current generation.
+Terminating current generation.
+Terminating current generation.
+Terminating current generation.
+Terminating current generation.
+Terminating current generation.
+Terminating current generation.
+Terminating current generation.
+Terminating current generation.
+Terminating current generation.
+Terminating current generation.
+Terminating current generation.
+Terminating current generation.
+Terminating current generation.
+Terminating current generation.
+Terminating current generation.
+Terminating current generation.
+Terminating current generation.
+Terminating current generation.
+Terminating current generation.
+Terminating current generation.
+Terminating current generation.
+Terminating current generation.
+Terminating current generation.
+Terminating current generation.
+Terminating current generation.
+Terminating current generation.
+Terminating current generation.
+Terminating current generation.
+Terminating current generation.
+Terminating current generation.
+Terminating current generation.
+GENERATION :  190
+Current mutation rate: 0.2795641895757687
+Stagnation: kill all but the very best and bring in fresh blood
+Adding 195 brand new rockets to the breeding pool
+52 rockets have received random mutations
+best scores 99.64 and 99.64 occured 1 times
+25 best scores:
+(0, 99.64, 24163, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(1, 99.64, 25025, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(2, 99.64, 25039, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(3, 99.64, 25042, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(4, 99.64, 25200, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(5, 99.64, 32921, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(6, 99.64, 33097, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(7, 99.64, 33101, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(8, 99.64, 33103, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(10, 99.64, 33123, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(11, 99.64, 33145, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(12, 99.64, 33274, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(13, 99.64, 33452, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(14, 99.64, 33453, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(15, 99.64, 33629, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(16, 99.64, 33634, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(17, 99.64, 33636, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(18, 99.64, 33637, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(19, 99.64, 33639, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(20, 99.64, 33640, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(26, 99.64, 33804, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(28, 99.64, 33806, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(34, 99.64, 33812, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(35, 99.64, 33813, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(36, 99.64, 33814, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+Conditions initiales : hmax = 2000.0 hmin = 2000.0
+GENERATION :  191
+Current mutation rate: 0.11932344408663453
+Selecting the 23 best rockets for breeding
+Adding 3 brand new rockets to the breeding pool
+Adding 12 brand new rockets to total population
+31 rockets have received random mutations
+resetting best score 99.64
+25 best scores:
+(0, 99.64, 24163, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(1, 99.64, 25025, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(2, 99.64, 25039, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(3, 99.64, 25042, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(4, 99.64, 25200, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(5, 0.04953437685753911, 33978, 'vfinal: 20.19', 'hfinal: 0', 'fleft: 100000')
+(7, 0.04953437685753911, 33980, 'vfinal: 20.19', 'hfinal: 0', 'fleft: 100000')
+(9, 0.04953437685753911, 33982, 'vfinal: 20.19', 'hfinal: 0', 'fleft: 100000')
+(11, 0.04953437685753911, 33984, 'vfinal: 20.19', 'hfinal: 0', 'fleft: 100000')
+(12, 0.04953437685753911, 33985, 'vfinal: 20.19', 'hfinal: 0', 'fleft: 100000')
+(13, 0.04953437685753911, 33986, 'vfinal: 20.19', 'hfinal: 0', 'fleft: 100000')
+(14, 0.04953437685753911, 33987, 'vfinal: 20.19', 'hfinal: 0', 'fleft: 100000')
+(15, 0.04953437685753911, 33988, 'vfinal: 20.19', 'hfinal: 0', 'fleft: 100000')
+(16, 0.04953437685753911, 33989, 'vfinal: 20.19', 'hfinal: 0', 'fleft: 100000')
+(18, 0.04953437685753911, 33991, 'vfinal: 20.19', 'hfinal: 0', 'fleft: 100000')
+(20, 0.04953437685753911, 33993, 'vfinal: 20.19', 'hfinal: 0', 'fleft: 100000')
+(21, 0.04953437685753911, 33994, 'vfinal: 20.19', 'hfinal: 0', 'fleft: 100000')
+(23, 0.04953437685753911, 33996, 'vfinal: 20.19', 'hfinal: 0', 'fleft: 100000')
+(25, 0.04953437685753911, 33998, 'vfinal: 20.19', 'hfinal: 0', 'fleft: 100000')
+(26, 0.04953437685753911, 33999, 'vfinal: 20.19', 'hfinal: 0', 'fleft: 100000')
+(27, 0.04953437685753911, 34000, 'vfinal: 20.19', 'hfinal: 0', 'fleft: 100000')
+(28, 0.04953437685753911, 34001, 'vfinal: 20.19', 'hfinal: 0', 'fleft: 100000')
+(29, 0.04953437685753911, 34002, 'vfinal: 20.19', 'hfinal: 0', 'fleft: 100000')
+(31, 0.04953437685753911, 34004, 'vfinal: 20.19', 'hfinal: 0', 'fleft: 100000')
+(32, 0.04953437685753911, 34005, 'vfinal: 20.19', 'hfinal: 0', 'fleft: 100000')
+Conditions initiales : hmax = 2000.0 hmin = 2000.0
+GENERATION :  192
+Current mutation rate: 0.06839468009238076
+Selecting the 23 best rockets for breeding
+Adding 3 brand new rockets to the breeding pool
+Adding 12 brand new rockets to total population
+14 rockets have received random mutations
+best scores 99.64 and 99.64 occured 1 times
+25 best scores:
+(0, 99.64, 24163, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(1, 99.64, 25025, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(2, 99.64, 25039, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(3, 99.64, 25042, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(4, 99.64, 25200, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(26, 99.64, 34176, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(27, 99.64, 34177, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(28, 99.64, 34178, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(51, 99.64, 34201, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(52, 99.64, 34202, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(53, 99.64, 34203, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(75, 99.64, 34225, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(76, 99.64, 34226, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(194, 0.10380835459558904, 34344, 'vfinal: 9.63', 'hfinal: 0', 'fleft: 99850')
+(5, 0.04953437685753911, 33978, 'vfinal: 20.19', 'hfinal: 0', 'fleft: 100000')
+(6, 0.04953437685753911, 33980, 'vfinal: 20.19', 'hfinal: 0', 'fleft: 100000')
+(7, 0.04953437685753911, 33982, 'vfinal: 20.19', 'hfinal: 0', 'fleft: 100000')
+(8, 0.04953437685753911, 33984, 'vfinal: 20.19', 'hfinal: 0', 'fleft: 100000')
+(9, 0.04953437685753911, 33985, 'vfinal: 20.19', 'hfinal: 0', 'fleft: 100000')
+(10, 0.04953437685753911, 33986, 'vfinal: 20.19', 'hfinal: 0', 'fleft: 100000')
+(11, 0.04953437685753911, 33987, 'vfinal: 20.19', 'hfinal: 0', 'fleft: 100000')
+(12, 0.04953437685753911, 33988, 'vfinal: 20.19', 'hfinal: 0', 'fleft: 100000')
+(13, 0.04953437685753911, 33989, 'vfinal: 20.19', 'hfinal: 0', 'fleft: 100000')
+(14, 0.04953437685753911, 33991, 'vfinal: 20.19', 'hfinal: 0', 'fleft: 100000')
+(15, 0.04953437685753911, 33993, 'vfinal: 20.19', 'hfinal: 0', 'fleft: 100000')
+Conditions initiales : hmax = 2000.0 hmin = 2000.0
+Terminating current generation.
+Terminating current generation.
+Terminating current generation.
+Terminating current generation.
+Terminating current generation.
+Terminating current generation.
+Terminating current generation.
+Terminating current generation.
+Terminating current generation.
+Terminating current generation.
+Terminating current generation.
+Terminating current generation.
+Terminating current generation.
+Terminating current generation.
+Terminating current generation.
+Terminating current generation.
+Terminating current generation.
+Terminating current generation.
+Terminating current generation.
+Terminating current generation.
+Terminating current generation.
+Terminating current generation.
+Terminating current generation.
+GENERATION :  193
+Current mutation rate: 0.23758139139655884
+Selecting the 23 best rockets for breeding
+Adding 3 brand new rockets to the breeding pool
+Adding 12 brand new rockets to total population
+46 rockets have received random mutations
+best scores 99.64 and 99.64 occured 2 times
+25 best scores:
+(0, 99.64, 24163, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(1, 99.64, 25025, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(2, 99.64, 25039, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(3, 99.64, 25042, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(4, 99.64, 25200, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(5, 99.64, 34176, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(6, 99.64, 34177, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(7, 99.64, 34178, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(8, 99.64, 34201, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(9, 99.64, 34202, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(10, 99.64, 34203, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(11, 99.64, 34225, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(12, 99.64, 34226, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(26, 99.64, 34353, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(27, 99.64, 34354, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(28, 99.64, 34355, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(29, 99.64, 34356, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(30, 99.64, 34357, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(31, 99.64, 34358, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(32, 99.64, 34359, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(33, 99.64, 34360, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(34, 99.64, 34361, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(35, 99.64, 34362, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(36, 99.64, 34363, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(37, 99.64, 34364, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+Conditions initiales : hmax = 2000.0 hmin = 2000.0
+GENERATION :  194
+Current mutation rate: 0.34720066147817547
+Selecting the 23 best rockets for breeding
+Adding 3 brand new rockets to the breeding pool
+Adding 12 brand new rockets to total population
+77 rockets have received random mutations
+best scores 99.64 and 99.64 occured 3 times
+25 best scores:
+(0, 99.64, 24163, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(1, 99.64, 25025, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(2, 99.64, 25039, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(3, 99.64, 25042, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(4, 99.64, 25200, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(5, 99.64, 34176, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(6, 99.64, 34177, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(8, 99.64, 34201, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(10, 99.64, 34203, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(11, 99.64, 34225, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(12, 99.64, 34226, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(13, 99.64, 34353, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(15, 99.64, 34355, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(16, 99.64, 34356, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(17, 99.64, 34357, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(18, 99.64, 34358, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(20, 99.64, 34360, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(21, 99.64, 34361, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(22, 99.64, 34362, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(26, 99.64, 34530, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(27, 99.64, 34531, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(30, 99.64, 34534, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(31, 99.64, 34535, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(33, 99.64, 34537, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(34, 99.64, 34538, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+Conditions initiales : hmax = 2000.0 hmin = 2000.0
+Terminating current generation.
+Terminating current generation.
+Terminating current generation.
+Terminating current generation.
+Terminating current generation.
+Terminating current generation.
+Terminating current generation.
+Terminating current generation.
+Terminating current generation.
+Terminating current generation.
+Terminating current generation.
+Terminating current generation.
+Terminating current generation.
+Terminating current generation.
+Terminating current generation.
+Terminating current generation.
+Terminating current generation.
+Terminating current generation.
+Terminating current generation.
+Terminating current generation.
+Terminating current generation.
+GENERATION :  195
+Current mutation rate: 0.371137707217424
+Selecting the 23 best rockets for breeding
+Adding 3 brand new rockets to the breeding pool
+Adding 12 brand new rockets to total population
+76 rockets have received random mutations
+best scores 99.64 and 99.64 occured 4 times
+25 best scores:
+(0, 99.64, 24163, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(1, 99.64, 25025, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(2, 99.64, 25039, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(3, 99.64, 25042, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(4, 99.64, 25200, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(5, 99.64, 34176, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(6, 99.64, 34177, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(8, 99.64, 34203, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(10, 99.64, 34226, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(11, 99.64, 34353, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(15, 99.64, 34358, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(18, 99.64, 34362, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(19, 99.64, 34530, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(22, 99.64, 34535, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(26, 99.64, 34707, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(28, 99.64, 34709, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(29, 99.64, 34710, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(32, 99.64, 34713, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(33, 99.64, 34714, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(34, 99.64, 34715, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(36, 99.64, 34717, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(40, 99.64, 34721, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(43, 99.64, 34724, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(45, 99.64, 34726, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(46, 99.64, 34727, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+Conditions initiales : hmax = 2000.0 hmin = 2000.0
+Terminating current generation.
+Terminating current generation.
+Terminating current generation.
+Terminating current generation.
+Terminating current generation.
+Terminating current generation.
+Terminating current generation.
+Terminating current generation.
+Terminating current generation.
+Terminating current generation.
+Terminating current generation.
+Terminating current generation.
+Terminating current generation.
+Terminating current generation.
+Terminating current generation.
+Terminating current generation.
+Terminating current generation.
+Terminating current generation.
+Terminating current generation.
+Terminating current generation.
+Terminating current generation.
+GENERATION :  196
+Current mutation rate: 0.3044130919002089
+Selecting the 23 best rockets for breeding
+Adding 3 brand new rockets to the breeding pool
+Adding 12 brand new rockets to total population
+67 rockets have received random mutations
+best scores 99.64 and 99.64 occured 5 times
+25 best scores:
+(0, 99.64, 24163, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(1, 99.64, 25025, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(2, 99.64, 25039, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(3, 99.64, 25042, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(4, 99.64, 25200, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(5, 99.64, 34176, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(6, 99.64, 34177, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(7, 99.64, 34203, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(10, 99.64, 34358, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(12, 99.64, 34530, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(14, 99.64, 34707, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(19, 99.64, 34715, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(20, 99.64, 34717, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(21, 99.64, 34721, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(22, 99.64, 34724, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(28, 99.64, 34886, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(29, 99.64, 34887, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(31, 99.64, 34889, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(32, 99.64, 34890, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(34, 99.64, 34892, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(35, 99.64, 34893, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(37, 99.64, 34895, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(38, 99.64, 34896, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(42, 99.64, 34900, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(44, 99.64, 34902, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+Conditions initiales : hmax = 2000.0 hmin = 2000.0
+GENERATION :  197
+Current mutation rate: 0.1641856081594996
+Stagnation: kill all but the very best and bring in fresh blood
+Adding 195 brand new rockets to the breeding pool
+32 rockets have received random mutations
+best scores 99.64 and 99.64 occured 1 times
+25 best scores:
+(0, 99.64, 24163, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(1, 99.64, 25025, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(2, 99.64, 25039, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(3, 99.64, 25042, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(4, 99.64, 25200, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(6, 99.64, 34177, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(7, 99.64, 34203, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(11, 99.64, 34715, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(12, 99.64, 34717, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(13, 99.64, 34721, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(14, 99.64, 34724, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(15, 99.64, 34886, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(16, 99.64, 34887, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(19, 99.64, 34892, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(21, 99.64, 34895, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(22, 99.64, 34896, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(27, 99.64, 35062, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(28, 99.64, 35063, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(29, 99.64, 35064, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(30, 99.64, 35065, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(31, 99.64, 35066, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(32, 99.64, 35067, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(33, 99.64, 35068, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(35, 99.64, 35070, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(36, 99.64, 35071, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+Conditions initiales : hmax = 2000.0 hmin = 2000.0
+GENERATION :  198
+Current mutation rate: 0.014648545860366539
+Selecting the 23 best rockets for breeding
+Adding 3 brand new rockets to the breeding pool
+Adding 12 brand new rockets to total population
+1 rockets have received random mutations
+resetting best score 99.64
+25 best scores:
+(0, 99.64, 24163, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(1, 99.64, 25025, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(2, 99.64, 25039, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(3, 99.64, 25042, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(4, 99.64, 25200, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(93, 0.17314771198855988, 35323, 'vfinal: 5.78', 'hfinal: 0', 'fleft: 99640')
+(8, 0.04953437685753911, 35238, 'vfinal: 20.19', 'hfinal: 0', 'fleft: 100000')
+(9, 0.04953437685753911, 35239, 'vfinal: 20.19', 'hfinal: 0', 'fleft: 100000')
+(10, 0.04953437685753911, 35240, 'vfinal: 20.19', 'hfinal: 0', 'fleft: 100000')
+(14, 0.04953437685753911, 35244, 'vfinal: 20.19', 'hfinal: 0', 'fleft: 100000')
+(15, 0.04953437685753911, 35245, 'vfinal: 20.19', 'hfinal: 0', 'fleft: 100000')
+(19, 0.04953437685753911, 35249, 'vfinal: 20.19', 'hfinal: 0', 'fleft: 100000')
+(20, 0.04953437685753911, 35250, 'vfinal: 20.19', 'hfinal: 0', 'fleft: 100000')
+(25, 0.04953437685753911, 35255, 'vfinal: 20.19', 'hfinal: 0', 'fleft: 100000')
+(26, 0.04953437685753911, 35256, 'vfinal: 20.19', 'hfinal: 0', 'fleft: 100000')
+(28, 0.04953437685753911, 35258, 'vfinal: 20.19', 'hfinal: 0', 'fleft: 100000')
+(31, 0.04953437685753911, 35261, 'vfinal: 20.19', 'hfinal: 0', 'fleft: 100000')
+(32, 0.04953437685753911, 35262, 'vfinal: 20.19', 'hfinal: 0', 'fleft: 100000')
+(33, 0.04953437685753911, 35263, 'vfinal: 20.19', 'hfinal: 0', 'fleft: 100000')
+(35, 0.04953437685753911, 35265, 'vfinal: 20.19', 'hfinal: 0', 'fleft: 100000')
+(36, 0.04953437685753911, 35266, 'vfinal: 20.19', 'hfinal: 0', 'fleft: 100000')
+(37, 0.04953437685753911, 35267, 'vfinal: 20.19', 'hfinal: 0', 'fleft: 100000')
+(38, 0.04953437685753911, 35268, 'vfinal: 20.19', 'hfinal: 0', 'fleft: 100000')
+(39, 0.04953437685753911, 35269, 'vfinal: 20.19', 'hfinal: 0', 'fleft: 100000')
+(40, 0.04953437685753911, 35270, 'vfinal: 20.19', 'hfinal: 0', 'fleft: 100000')
+Conditions initiales : hmax = 2000.0 hmin = 2000.0
+GENERATION :  199
+Current mutation rate: 0.18813431863423682
+Selecting the 23 best rockets for breeding
+Adding 3 brand new rockets to the breeding pool
+Adding 12 brand new rockets to total population
+37 rockets have received random mutations
+best scores 99.64 and 99.64 occured 1 times
+25 best scores:
+(0, 99.64, 24163, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(1, 99.64, 25025, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(2, 99.64, 25039, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(3, 99.64, 25042, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(4, 99.64, 25200, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(26, 99.64, 35433, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(27, 99.64, 35434, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(28, 99.64, 35435, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(29, 99.64, 35436, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(51, 99.64, 35458, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(52, 99.64, 35459, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(53, 99.64, 35460, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(75, 99.64, 35482, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(76, 99.64, 35483, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(98, 99.64, 35505, 'vfinal: 0.09', 'hfinal: 0', 'fleft: 99640')
+(5, 0.17314771198855988, 35323, 'vfinal: 5.78', 'hfinal: 0', 'fleft: 99640')
+(120, 0.07934403511740895, 35527, 'vfinal: 12.6', 'hfinal: 0', 'fleft: 99910')
+(6, 0.04953437685753911, 35238, 'vfinal: 20.19', 'hfinal: 0', 'fleft: 100000')
+(7, 0.04953437685753911, 35239, 'vfinal: 20.19', 'hfinal: 0', 'fleft: 100000')
+(8, 0.04953437685753911, 35240, 'vfinal: 20.19', 'hfinal: 0', 'fleft: 100000')
+(9, 0.04953437685753911, 35244, 'vfinal: 20.19', 'hfinal: 0', 'fleft: 100000')
+(10, 0.04953437685753911, 35245, 'vfinal: 20.19', 'hfinal: 0', 'fleft: 100000')
+(11, 0.04953437685753911, 35249, 'vfinal: 20.19', 'hfinal: 0', 'fleft: 100000')
+(12, 0.04953437685753911, 35250, 'vfinal: 20.19', 'hfinal: 0', 'fleft: 100000')
+(13, 0.04953437685753911, 35255, 'vfinal: 20.19', 'hfinal: 0', 'fleft: 100000')
+31.44281052851194 m/s vitesse finale
+695 m altitude finale
+Conditions initiales : hmax = 2000.0 hmin = 2000.0
+
